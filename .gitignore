@@ -1,0 +1,15 @@
+# Segredos locais - nunca commitar
+.env
+*.env
+!.env.example
+
+# Go
+/bin/
+*.exe
+*.test
+*.out
+
+# Editor / SO
+.vscode/
+.idea/
+.DS_Store
