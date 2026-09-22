@@ -45,7 +45,7 @@ Dado pathvalue: `id: int` devolver erro caso o id seja inválido ou não existen
 
 #### Listar livros com filtros
 
-`GET /books?tittle=&author=&year=&status=&dt_add=&dt_start=&dt_conclusion=&rating=` 
+`GET /books?tittle=&author=&year=&status=&from_dt_add=&to_dt_add=&from_dt_start=&to_dt_star=&from_dt_conclusion=&to_dt_conclusion&rating=` 
 
 Transforma cada campo GET passado na url em parâmetro de busca no banco e retorna os livros baseados nestes filtros.
 
