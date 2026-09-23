@@ -13,7 +13,7 @@ type Store interface {
 	Create(ctx context.Context, b *Book) error
 	GetByID(ctx context.Context, id int) (*Book, error)
 	List(ctx context.Context, filters Filters) ([]Book, error)
-	Update(ctx context.Context, id int, b *Book) error
+	Update(ctx context.Context, b *Book) error
 	Delete(ctx context.Context, id int) error
 }
 
