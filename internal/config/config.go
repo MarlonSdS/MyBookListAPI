@@ -13,6 +13,7 @@ type Config struct {
 	DBHost     string
 	DBPort     string
 	DBName     string
+	TestDBName string
 }
 
 func Load() (*Config, error) {
@@ -25,6 +26,7 @@ func Load() (*Config, error) {
 		DBHost:     os.Getenv("DB_HOST"),
 		DBPort:     os.Getenv("DB_PORT"),
 		DBName:     os.Getenv("DB_NAME"),
+		TestDBName: os.Getenv("TEST_DB_NAME"),
 	}
 
 	if cfg.DBUser == "" || cfg.DBPassword == "" || cfg.DBHost == "" || cfg.DBPort == "" || cfg.DBName == "" {
@@ -36,4 +38,9 @@ func Load() (*Config, error) {
 
 func (c *Config) DSN() string {
 	return fmt.Sprintf("postgres://%s:%s@%s:%s/%s", c.DBUser, c.DBPassword, c.DBHost, c.DBPort, c.DBName)
+}
+
+// função DSN para ser usada em testes, conecta com o banco booklist_test
+func (c *Config) TestDSN() string {
+	return fmt.Sprintf("postgres://%s:%s@%s:%s/%s", c.DBUser, c.DBPassword, c.DBHost, c.DBPort, c.TestDBName)
 }
