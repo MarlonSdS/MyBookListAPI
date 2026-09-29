@@ -58,3 +58,14 @@ Transforma cada campo GET passado na url em parâmetro de busca no banco e retor
 #### PostgreSQL e Docker
 
 O banco de dados será PostgreSQL e rodará dentro de um container docker.
+#### Como pôr o banco no ar
+O projeto já tem um yml docker-compose que pega as informações necessárias de um arquivo .env. 
+O .env não está incluído no repositório, você deve criá-lo seguindo o modelo mostrado no .env.example.
+Coloque os valores que preferir nas variáveis.
+
+O programa também utilizará as variáveis de ambiente do .env em sua execução, para que o código Go 
+consiga ler desse arquivo, é necessário instalar a lib godotenv:
+```go get github.com/joho/godotenv```
+
+Com tudo pronto, só subir o container:
+```docker compose up -d```
