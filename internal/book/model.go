@@ -12,6 +12,15 @@ const (
 	StatusRead     Status = "read"
 )
 
+func (s Status) Valid() bool {
+	switch s {
+	case StatusPlanning, StatusReading, StatusRead:
+		return true
+	default:
+		return false
+	}
+}
+
 type Book struct {
 	ID           int        `json:"id"`
 	Title        string     `json:"title,omitempty"`

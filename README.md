@@ -31,7 +31,7 @@ Dados opcionais: `year: int, status: string, dt_start: time, dt_conclusion: time
 
 Dado pathvalue: `id: int` devolver erro caso o id seja inválido ou não existente.
 
-Dados da requisição: `tittle: string, author: string, year: int, status: string, dt_add: time, dt_start: time, dt_conclusion: time, rating: float, note: string` todos opcionais.
+Dados da requisição: `tittle: string, author: string, year: int, status: string, dt_start: time, dt_conclusion: time, rating: float, note: string` todos opcionais.
 
 #### Deletar livro
 
