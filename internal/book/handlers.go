@@ -54,6 +54,14 @@ func CreateHandler(store Store) http.HandlerFunc {
 			return
 		}
 
+		if !req.Status.Valid() {
+			if req.Status != "" {
+				writeError(w, http.StatusBadRequest, "invalid status")
+				return
+			}
+			req.Status = StatusPlanning
+		}
+
 		b := &Book{
 			Title:        req.Title,
 			Author:       req.Author,
